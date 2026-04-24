@@ -104,6 +104,20 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("should display whole number when square root result is integer")
+    void testSquareRootOfPerfectSquare() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(9);
+        calc.pressUnaryOperationKey("√");
+
+        String expected = "3";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual); //actual ist "3.0", daher Fehlschlag
+    }
+
 
     //TODO hier weitere Tests erstellen
 }
