@@ -118,6 +118,20 @@ class CalculatorTest {
         assertEquals(expected, actual); //actual ist "3.0", daher Fehlschlag
     }
 
+    @Test
+    @DisplayName("should do nothing when eqquals is pressed without an operation")
+    void testEqualsWithoutOperation() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey(); //ohne Operation
+
+        String expected = "5";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual); 
+    }
+
 
     //TODO hier weitere Tests erstellen
 }
